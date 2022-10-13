@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Céges buli</title>
+</head>
+
+<body>
+    <header>
+        <h1>Valahol buli lesz...</h1>
+    </header>
+    <main>
+        <div class="popup-window">
+        
+        </div>
+        <section class="input-section">
+            <form action="javascript:void(0)">
+                <label for="text">Add meg a neved</label>
+                <input class="outer-input" id="name" type="text">
+
+                <label id="checkbox-label" for="checkbox">Pipa, ha biztosan jössz</label>
+                <input class="outer-input" id="checkForComing" type="checkbox">
+
+
+                <div class="multiselect">
+                    <div class="selectBox" onclick="showCheckboxes()">
+                        <select>
+                            <option>Válaszd ki mit hozol</option>
+                        </select>
+                        <div class="overSelect"></div>
+                    </div>
+                    <div id="checkboxes">
+                        <label class="drinks-label" for="one">
+                            <input type="checkbox" value="Pálinka" class="drinks" id="one">Pálinka</label>
+                        <label for="two">
+                            <input type="checkbox" value="Sör" class="drinks" id="two">Sör</label>
+                        <label for="three">
+                            <input type="checkbox" value="Bor" class="drinks" id="three">Bor</label>
+                        <label for="four">
+                            <input type="checkbox" value="Üditő" class="drinks" id="four">Üditő</label>
+                        <label for="five">
+                            <input type="checkbox" value="Whiskey" class="drinks" id="five">Whiskey</label>
+                    </div>
+                </div>
+                <button onclick="registerUser()">Adatok küldése</button>
+            </form>
+        </section>
+
+
+
+
+
+        <section class="get-users-holder">
+            <table class="table-of-users">
+               
+
+            </table>
+            <button id="get-users" onclick="getUsers()">Kik jönnek?</button>
+
+        </section>
+
+    
+    </main>
+    <footer>
+        <h2>
+            Footer elment borért.
+        </h2>
+    </footer>
+
+    <script src="./logic.js"></script>
+</body>
+
+</html>

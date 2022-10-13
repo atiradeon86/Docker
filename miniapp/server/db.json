@@ -1,0 +1,67 @@
+{
+  "users": [
+    {
+      "name": "Zoli",
+      "willCome": true,
+      "drinkList": [
+        "Pálinka",
+        "Bor"
+      ]
+    },
+    {
+      "name": "Tibi",
+      "willCome": true,
+      "drinkList": [
+        "Sör",
+        "Bor"
+      ]
+    },
+    {
+      "name": "Zsuzsi",
+      "willCome": false,
+      "drinkList": [
+        "Pálinka",
+        "Sör"
+      ]
+    },
+    {
+      "name": "Mentor1",
+      "willCome": false,
+      "drinkList": [
+        "Pálinka",
+        "Sör",
+        "Bor",
+        "Üditő",
+        "Whiskey"
+      ]
+    },
+    {
+      "name": "Mentor1",
+      "willCome": false,
+      "drinkList": [
+        "Pálinka",
+        "Sör",
+        "Bor",
+        "Üditő",
+        "Whiskey"
+      ],
+      "userIsComing": true
+    },
+    {
+      "name": "Mentor 1",
+      "willCome": false,
+      "drinkList": [
+        "Pálinka",
+        "Sör"
+      ],
+      "userIsComing": true
+    },
+    {
+      "name": "Bryan",
+      "willCome": true,
+      "drinkList": [
+        "Whiskey"
+      ]
+    }
+  ]
+}

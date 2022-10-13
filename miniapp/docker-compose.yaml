@@ -1,0 +1,29 @@
+version: "3.8"
+networks:
+  bryan-network:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 10.0.0.0/16
+services:
+ 
+  httpd-frontend:
+    build: ./frontend
+    container_name: httpd
+    restart: always
+    ports:
+      - "80:80"
+    networks:
+      bryan-network:
+
+  node-backend:
+    build: ./server
+    container_name: node-backend
+    restart: always
+    ports:
+      - "3000:3000"
+    volumes:
+      - e:\docker\miniapp\server\:/app
+    networks:
+      bryan-network:

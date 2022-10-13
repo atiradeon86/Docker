@@ -1,0 +1,213 @@
+*, html {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+header {
+    width: 100%;
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+    background: rgb(255, 127, 80);
+}
+
+
+body {
+    background-image: url('https://images.unsplash.com/photo-1496843916299-590492c751f4?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+
+main {
+    width: 100%;
+    margin-top: 4rem;
+    min-height: 850px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.popup-window {
+    visibility: hidden;
+    width: 15%;
+    height: 80px;
+    background: rgb(214, 96, 53);
+    border: 2px solid rgb(24, 23, 23);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 10%;
+    left: 42.5%;
+    font-size: 1.5rem;
+    padding: 10px;
+    z-index: 10;
+}
+
+.input-section{
+    width: 50%;
+    min-height: 480px;
+    margin: 0 auto;
+    border: 5px solid rgba(0, 0, 0, 0.823);
+    background: rgba(255, 255, 255, 0.775);
+}
+
+.input-section form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-section form label {
+    font-size: 1.5rem;
+    width: 50%;
+    margin: 1rem auto;
+    text-align: center;
+}
+
+#checkbox-label{
+    margin-bottom: 5px;
+}
+
+.input-section form .outer-input {
+    width: 30%;
+    margin: 0 auto;
+    height: 25px;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.input-section form button {
+    width: 10%;
+    margin: 1rem auto;
+    position: absolute;
+    top: 580px;
+    height: 2.2rem;
+    font-size: 1.1rem;
+    left: 45%;
+    background: rgb(255, 127, 80);
+    border-radius: 5px;
+    border: none;
+
+}
+
+
+
+/* MULTI SELECT */
+
+.multiselect {
+    width: 30%;
+    margin: 0 auto;
+}
+
+.selectBox {
+    position: relative;
+}
+
+
+
+.drinks{
+    margin-right: 10px;
+}
+
+.selectBox select {
+    width: 100%;
+    font-weight: bold;
+    height: 25px;
+}
+
+.overSelect {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+#checkboxes {
+    display: none;
+    border: 1px #dadada solid;
+}
+
+#checkboxes label {
+    display: block;
+    width: 50%;
+    text-align: left;
+    font-size: 1.2rem;
+}
+
+/* -------- get-users-holder -------- */
+
+.get-users-holder {
+    width: 50%;
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 4rem auto;
+    border: 5px solid rgba(0, 0, 0, 0.823);
+    background: rgba(255, 255, 255, 0.775);
+}
+
+.get-users-holder .table-of-users {
+    visibility: hidden;
+    align-self: flex-start;
+    justify-self: center;
+    text-align: left;
+    width: 50%;
+
+    margin: 1% auto;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.get-users-holder .table-of-users thead tr th{
+    border-bottom: 1px solid black;
+}
+
+
+
+
+.get-users-holder .table-of-users .gen-td {
+    padding-top: 5px;
+    font-weight: normal;
+    font-size: 1.1rem;
+    width: 33%;
+
+
+}
+
+
+.get-users-holder #get-users {
+    width: 20%;
+    /* align-self: flex-end; */
+    justify-self: center;
+    margin: 1.5rem 0 1.5rem 0;
+    height: 2.2rem;
+    font-size: 1.1rem;
+    background: rgb(255, 127, 80);
+    border-radius: 5px;
+    border: none;
+    /* color: whitesmoke; */
+}
+
+
+
+/* -------- footer --------- */
+
+footer {
+    width: 100%;
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgb(255, 127, 80);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
