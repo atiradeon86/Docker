@@ -1,0 +1,11 @@
+Build example
+
+docker build . --build-arg SA_PASSWORD=Demo1234# -t atiradeon86/mssql-adventureworks-demodb:0.1
+
+Running example
+
+docker run -e "ACCEPT_EULA=Y" -d --name  mydemodb -p 1433:1433  atiradeon86/mssql-adventureworks-demodb:0.1
+
+Repository push example:
+
+docker push atiradeon86/mssql-adventureworks-demodb:0.1
