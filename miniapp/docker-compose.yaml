@@ -15,7 +15,7 @@ services:
     ports:
       - "80:80"
     networks:
-      bryan-network:
+      - bryan-network
 
   node-backend:
     build: ./server
@@ -24,6 +24,6 @@ services:
     ports:
       - "3000:3000"
     volumes:
-      - e:\docker\miniapp\server\:/app
+      - d:\github\docker\miniapp\server\:/app
     networks:
-      bryan-network:
+      - bryan-network

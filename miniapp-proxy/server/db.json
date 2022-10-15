@@ -78,10 +78,10 @@
       ]
     },
     {
-      "name": "dsdsdsd",
-      "willCome": false,
+      "name": "Teszt",
+      "willCome": true,
       "drinkList": [
-        "Pálinka"
+        "Bor"
       ]
     }
   ]

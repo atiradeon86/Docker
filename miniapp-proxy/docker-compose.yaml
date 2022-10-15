@@ -1,0 +1,41 @@
+version: "3.8"
+networks:
+  bryan-network:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 10.0.0.0/16
+services:
+ 
+  httpd-frontend:
+    build: ./frontend
+    container_name: httpd
+    restart: always
+    #ports:
+      #- "80:80"
+    networks:  
+      bryan-network:
+       ipv4_address: 10.0.0.2
+
+  node-backend:
+    build: ./server
+    container_name: node-backend
+    restart: always
+    #ports:
+      #- "3000:3000"
+    volumes:
+      - d:\github\Docker\miniapp-proxy\server\:/app
+    networks:
+      bryan-network:
+       ipv4_address: 10.0.0.3
+
+  httpd-proxy:
+    build: ./proxy
+    container_name: httpd-proxy
+    restart: always
+    ports:
+      - "80:80"
+    networks:
+      bryan-network:
+       ipv4_address: 10.0.0.4
