@@ -1,0 +1,18 @@
+1. Build example
+
+docker build . -t atiradeon86/mysql-northwind-demodb:0.1
+
+Working method:
+
+ - Pull mysql:8.0.31-debian
+ - Copy SQL file to /docker-entrypoint-initdb.d/ (Creating tables + Inserting Data)
+ - Official Image run all SQL files from this location
+
+
+2. Volume Create Example 
+
+docker volume create mysql-data-volume
+
+3. Running example - with volume mount
+
+docker run -d -p 3306:3306 -v mysql-data-volume:/var/lib/mysql --name mysql-northwind-demodb -e MYSQL_ROOT_PASSWORD=Demo1234# atiradeon86/mysql-northwind-demodb:0.1
