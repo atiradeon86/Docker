@@ -30,4 +30,10 @@ Kliens oldalon:
 Docker Login
 docker login docker.bryan86.cloud
 
+Tesztelés:
+
 docker pull docker.bryan86.cloud/mssql-adventureworks-demodb:0.3
+
+|
+
+docker run -e "ACCEPT_EULA=Y" -d --name  mssql2022-bryan -p 1433:1433  docker.bryan86.cloud/mssql-adventureworks-demodb:0.3
