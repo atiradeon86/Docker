@@ -1,0 +1,59 @@
+1. DNS Setup (https://registry-gitlab.bryan86.cloud,https://gitlab.bryan86.cloud/)
+2. Port Open 443,80,5005
+Example: 
+Azure VM
+az login
+az vm open-port --resource-group Bryan --name Bryan-Gitlab --port 5005 --priority 200
+
+3. Gitlab install
+
+sudo apt-get update
+sudo apt-get install -y curl openssh-server ca-certificates tzdata perl
+
+curl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ee/script.deb.sh | sudo bash
+
+sudo EXTERNAL_URL="https://gitlab.bryan86.cloud/" apt-get install gitlab-ee
+
+4. /etc/gitlab/gitlab.rb
+
+ registry_external_url 'https://registry-gitlab.bryan86.cloud'
+
+ gitlab_rails['registry_enabled'] = true
+ gitlab_rails['registry_host'] = "registry.gitlab.bryan86.cloud"
+ gitlab_rails['registry_port'] = "5005"
+ gitlab_rails['registry_path'] = "/var/opt/gitlab/gitlab-rails/shared/registry"
+
+ 5. Gitlab runner install + config 
+
+/etc/gitlab-runner/config.toml
+
+[[runners]]
+  name = "Bryan-Gitlab"
+  url = "https://gitlab.bryan86.cloud/"
+  id = 2
+  token = "eQiqBfDyonPe7htxKbFc"
+  token_obtained_at = 2022-11-18T17:03:56Z
+  token_expires_at = 0001-01-01T00:00:00Z
+  executor = "docker"
+  [runners.custom_build_dir]
+  [runners.cache]
+    [runners.cache.s3]
+    [runners.cache.gcs]
+    [runners.cache.azure]
+  [runners.docker]
+    tls_verify = false
+    image = "docker:stable"
+    privileged = true
+    disable_entrypoint_overwrite = false
+    oom_kill_disable = false
+    disable_cache = false
+    volumes = ["/cache"]
+    shm_size = 0
+
+6. Gitlab reconfigure -> sudo gitlab-ctl reconfigure
+
+7. Generating Access Token (Settings > Access Tokens) + Initial Variable Settings / CI/CD > Variables > Expand > Add variable (CI_REGISTRY_PASSWORD,CI_REGISTRY_USER)
+
+8. Push .gitlab-ci.yaml
+
+9. Wait for it ... :)

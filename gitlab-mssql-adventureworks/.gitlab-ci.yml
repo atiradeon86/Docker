@@ -1,0 +1,16 @@
+default:
+  image: docker:stable
+services:
+  - name: docker:dind
+
+variables:
+  IMAGE_NAME: "bryan-mssql-2022:0.1"
+  DOCKER_DRIVER: overlay2
+  DOCKER_REGISTRY: registry-gitlab.bryan86.cloud
+  DOCKER_TLS_CERTDIR: ''
+
+build image:
+  script:
+    - docker login $DOCKER_REGISTRY -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD
+    - docker build -t $DOCKER_REGISTRY/gitlab-instance-861d4f9b/mssql-adventure-works/$IMAGE_NAME .
+    - docker push $DOCKER_REGISTRY/gitlab-instance-861d4f9b/mssql-adventure-works/$IMAGE_NAME
