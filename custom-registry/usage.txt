@@ -1,0 +1,33 @@
+Saját Docker Registry létrehozása:
+
+1. Cert elkészítése a kívánt domain-re. Pl. Letsencrypt-el 
+2. Cert fájlok másolása a /certs mappába
+3. cert_convert.sh futtatása, ez létrehozza a szükséges domain.crt, domain.key fájlt.
+4. auth.sh szerkesztése, a kívánt felhasználónév / jelszó páros beírása 
+5. auth.sh futtatása, ez létrehozza a szükséges htpasswd fájlt.
+4. run.sh futtatása
+
+
+Szerver oldalon:
+
+Egy létező image feltöltése a saját Registry-be:
+
+Image letöltés:
+docker pull atiradeon86/mssql-adventureworks-demodb:0.3
+
+Tag beállítása:
+docker tag atiradeon86/mssql-adventureworks-demodb:0.3 docker.bryan86.cloud/mssql-adventureworks-demodb:0.3
+
+Docker Login
+docker login docker.bryan86.cloud
+
+Image Push
+docker push docker.bryan86.cloud/mssql-adventureworks-demodb:0.3
+
+
+Kliens oldalon:
+
+Docker Login
+docker login docker.bryan86.cloud
+
+docker pull docker.bryan86.cloud/mssql-adventureworks-demodb:0.3
